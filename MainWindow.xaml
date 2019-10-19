@@ -6,8 +6,8 @@
         x:Class="MyApp.MainWindow"
         Title="Окно ЛЯГУШКИ">
     <StackPanel>
-        <Button>i'm frog!</Button>
-        <Button>2 button</Button>
-        <TextBox />
+        <Button Name="frogButton">i'm frog!</Button>
+        <Button Name="btn2">2 button</Button>
+        <TextBox Name="tb1">Default Content</TextBox>
     </StackPanel>
 </Window>
