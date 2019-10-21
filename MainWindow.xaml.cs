@@ -39,6 +39,9 @@ namespace MyApp
         }
         private void frogButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
+            var AuthWindow = new AuthWindow();
+            AuthWindow.Show();
+            this.Hide();
             tb1.Text = "I'm FROOOOOG!!!";
         }
         private void InitializeComponent()
