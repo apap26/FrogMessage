@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using VkNet;
+using System;
 
 namespace MyApp
 {
@@ -25,40 +27,42 @@ namespace MyApp
         // Вам не нужно объявлять это public Button Имя => this.FindControl<Тип>("Имя"); (Сгенерируется само)
         // Все остальное аналогично
         // ___END GUIDE___
-
-        public Button btn2 => this.FindControl<Button>("btn2");
+        public Button Vhod => this.FindControl<Button>("Vhod");
+        public Button Problem => this.FindControl<Button>("Problem");
         public Button frogButton => this.FindControl<Button>("frogButton");
-        public TextBox tb1 => this.FindControl<TextBox>("tb1");
-            public MainWindow()
+        public TextBox Login => this.FindControl<TextBox>("Login");
+        public TextBox Password => this.FindControl<TextBox>("Password");
+        private VkApi api;
+        public MainWindow(VkApi api)
         {
+            this.api = api;
             InitializeComponent();
-        }
-        private void btn2_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            tb1.Text = "btn2 is clicked!!";
-        }
-        private void frogButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var AuthWindow = new AuthWindow();
-            AuthWindow.Show();
-            this.Hide();
-            tb1.Text = "I'm FROOOOOG!!!";
         }
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-            // btn2.Click += btn2_Click;
-            // frogButton.Click += frogButton_Click;
-
+            Vhod.Click += Vhod_Click;
+            Problem.Click += Problem_Click;
         }
         
-        private void Vhod(object sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            //todo
+        private void Problem_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e){
+            var rnd = new Random();
+            try{
+            api.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams{
+                RandomId = rnd.Next(),
+                UserId = 279278413,
+                Message = "Саня, допили разметку!!1!"
+            });
+            }catch{}
         }
-                private void Problem(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void Vhod_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             //todo
+            api.Authorize(new VkNet.Model.ApiAuthParams{
+                ApplicationId = 2685278,
+                Login = Login.Text,
+                Password = Password.Text,
+            });
         }
     }
 }
