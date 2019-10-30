@@ -4,10 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MyApp.MainWindow"
-        Title="Окно ЛЯГУШКИ">
+        Title="FrogMassege">
     <StackPanel>
-        <Button Name="frogButton">i'm frog!</Button>
-        <Button Name="btn2">2 button</Button>
-        <TextBox Name="tb1">Default Content</TextBox>
+        <TextBox Name="Login" Watermark="Введи логин" />
+        <TextBox Name="Password" Watermark="Теперь пароль" />
+        <Button Name="Vhod" Width="160" Foreground="White" Background="Gray">Войти в своё болото</Button>
+        <Button Name="Problem" Width="160" Foreground="White" Background="SlateBlue">Проблема со входом?</Button>
     </StackPanel>
 </Window>

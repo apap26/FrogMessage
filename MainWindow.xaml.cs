@@ -29,7 +29,7 @@ namespace MyApp
         public Button btn2 => this.FindControl<Button>("btn2");
         public Button frogButton => this.FindControl<Button>("frogButton");
         public TextBox tb1 => this.FindControl<TextBox>("tb1");
-        public MainWindow()
+            public MainWindow()
         {
             InitializeComponent();
         }
@@ -47,9 +47,18 @@ namespace MyApp
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-            btn2.Click += btn2_Click;
-            frogButton.Click += frogButton_Click;
+            // btn2.Click += btn2_Click;
+            // frogButton.Click += frogButton_Click;
+
         }
         
+        private void Vhod(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            //todo
+        }
+                private void Problem(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            //todo
+        }
     }
 }
