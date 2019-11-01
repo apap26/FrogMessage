@@ -48,21 +48,36 @@ namespace MyApp
         private void Problem_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e){
             var rnd = new Random();
             try{
-            api.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams{
-                RandomId = rnd.Next(),
-                UserId = 279278413,
-                Message = "Саня, допили разметку!!1!"
-            });
-            }catch{}
+                api.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams{
+                    RandomId = rnd.Next(),
+                    UserId = 279278413,
+                    Message = "Саня, допили разметку!!1!"
+                });
+            }catch(VkNet.Exception.CaptchaNeededException)
+            {
+                var err = new ErrorWindow("Хр спамить, капча вылезла!");
+                err.Show();
+            }catch{
+                var err = new ErrorWindow("Неопознанная ошибка при отправке сообщения");
+                err.Show();
+            }
         }
         private void Vhod_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            //todo
-            api.Authorize(new VkNet.Model.ApiAuthParams{
-                ApplicationId = 2685278,
-                Login = Login.Text,
-                Password = Password.Text,
-            });
+            try{
+                api.Authorize(new VkNet.Model.ApiAuthParams{
+                    ApplicationId = 2685278,
+                    Login = Login.Text,
+                    Password = Password.Text,
+                });
+            }catch(VkNet.Exception.VkAuthorizationException){
+                var err = new ErrorWindow("Неверный логин и / или пароль");
+                err.Show();
+            }catch(VkNet.Exception.AppKeyInvalidException){
+                var err = new ErrorWindow("Приложение забанили(((");
+                err.Show();
+            }
+            Password.Text = "";
         }
     }
 }
