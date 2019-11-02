@@ -32,6 +32,7 @@ namespace MyApp
         public Button frogButton => this.FindControl<Button>("frogButton");
         public TextBox Login => this.FindControl<TextBox>("Login");
         public TextBox Password => this.FindControl<TextBox>("Password");
+        
         private VkApi api;
         public MainWindow(VkApi api)
         {

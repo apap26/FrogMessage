@@ -6,9 +6,9 @@
         x:Class="MyApp.MainWindow"
         Title="FrogMassege">
     <StackPanel>
-        <TextBox Name="Login" Watermark="Введи логин" />
-        <TextBox Name="Password" Watermark="Теперь пароль" />
-        <Button Name="Vhod" Width="160" Foreground="White" Background="Gray">Войти в своё болото</Button>
-        <Button Name="Problem" Width="160" Foreground="White" Background="SlateBlue">Проблема со входом?</Button>
+        <TextBox Name="Login" Watermark="Введи логин" Width="160"/>
+        <TextBox Name="Password" Watermark="Теперь пароль" Width="160" />
+        <Button Name="Vhod" Width="160" Foreground="Black" Background="Lime">Войти в своё болото</Button>
+        <Button Name="Problem" Width="160" Foreground="White" Background="Fuchsia">Проблема со входом?</Button>
     </StackPanel>
 </Window>
