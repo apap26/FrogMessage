@@ -5,5 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MyApp.SelectionChatWindow"
         Title="AvaloniaAppTemplate">
-  Welcome to Avalonia!
+      <DockPanel>
+        <ListBox DockPanel.Dock="Left" Width="350" />
+        <Canvas />
+      </DockPanel>
 </Window>

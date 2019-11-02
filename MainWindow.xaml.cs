@@ -79,6 +79,8 @@ namespace MyApp
                 err.Show();
             }
             Password.Text = "";
+            var vin=new SelectionChatWindow();
+            vin.Show();
         }
     }
 }
