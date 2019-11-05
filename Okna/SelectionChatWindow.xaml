@@ -4,9 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MyApp.SelectionChatWindow"
-        Title="AvaloniaAppTemplate">
-      <DockPanel>
-        <ListBox DockPanel.Dock="Left" Width="350" />
-        <Canvas />
-      </DockPanel>
+        Width="400" Height="450"
+        Title="Чат">
+	<StackPanel Margin="10">
+		<TextBox Name="Read" Watermark="Введи сообщение..." Width="300" Height="200" /> 
+    <Button Name="Enter" Width="300" Foreground="Black" Background="Gray">Отправь сообщение...</Button>
+    <TextBox Name="Write" Watermark="прочитай сообщение..." Width="300" Height="200" /> 
+	</StackPanel>
 </Window>
