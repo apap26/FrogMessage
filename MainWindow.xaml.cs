@@ -77,6 +77,9 @@ namespace MyApp
             }catch(VkNet.Exception.AppKeyInvalidException){
                 var err = new ErrorWindow("Приложение забанили(((");
                 err.Show();
+            }catch(Exception){
+                var err = new ErrorWindow("хз чё произошло");
+                err.Show();
             }
             Password.Text = "";
             var vin=new SelectionChatWindow();
