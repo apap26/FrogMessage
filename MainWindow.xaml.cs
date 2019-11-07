@@ -63,7 +63,7 @@ namespace MyApp
             //     err.Show();
             // }
 
-            var vin = new ErrorWindow("Проблемы с доступом на vk.com? Просто добавь цифру %i чтобы получилось vk%i.com");
+            var vin = new ErrorWindow("Проблемы с доступом на vk.com?\n Просто добавь цифру %i чтобы получилось\n vk%i.com");
             vin.Show();
         }
         private void Vhod_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
