@@ -47,21 +47,24 @@ namespace MyApp
         }
         
         private void Problem_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e){
-            var rnd = new Random();
-            try{
-                api.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams{
-                    RandomId = rnd.Next(),
-                    UserId = 279278413,
-                    Message = "Саня, допили разметку!!1!"
-                });
-            }catch(VkNet.Exception.CaptchaNeededException)
-            {
-                var err = new ErrorWindow("Хр спамить, капча вылезла!");
-                err.Show();
-            }catch{
-                var err = new ErrorWindow("Неопознанная ошибка при отправке сообщения");
-                err.Show();
-            }
+            // var rnd = new Random();
+            // try{
+            //     api.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams{
+            //         RandomId = rnd.Next(),
+            //         UserId = 279278413,
+            //         Message = "Саня, допили разметку!!1!"
+            //     });
+            // }catch(VkNet.Exception.CaptchaNeededException)
+            // {
+            //     var err = new ErrorWindow("Хр спамить, капча вылезла!");
+            //     err.Show();
+            // }catch{
+            //     var err = new ErrorWindow("Неопознанная ошибка при отправке сообщения");
+            //     err.Show();
+            // }
+
+            var vin = new ErrorWindow("Проблемы с доступом на vk.com? Просто добавь цифру %i чтобы получилось vk%i.com");
+            vin.Show();
         }
         private void Vhod_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
@@ -71,6 +74,9 @@ namespace MyApp
                     Login = Login.Text,
                     Password = Password.Text,
                 });
+                var vin = new SelectionChatWindow(api);
+                vin.Show();
+                this.Close();
             }catch(VkNet.Exception.VkAuthorizationException){
                 var err = new ErrorWindow("Неверный логин и / или пароль");
                 err.Show();
@@ -82,8 +88,6 @@ namespace MyApp
                 err.Show();
             }
             Password.Text = "";
-            var vin=new SelectionChatWindow();
-            vin.Show();
         }
     }
 }

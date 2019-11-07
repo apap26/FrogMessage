@@ -4,19 +4,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MyApp.SelectionChatWindow"
-        Width="1" Height="1"
+        Width="400" Height="300"
         Title="Чат">
 	<StackPanel Margin="10">
-    <TextBlock  Name ="one" Background="Blue" Height="20" />
-    <TextBlock  Name ="two" Background="Green" Height="20" />
-    <TextBlock  Name ="three" Background="Blue" Height="20" />
-    <TextBlock  Name ="four" Background="Green" Height="20" />
-    <TextBlock  Name ="five" Background="Blue" Height="20" />
-    <TextBlock  Name ="six" Height="20" Background="Green" />
-    <TextBlock  Name ="seven" Height="20" Background="Blue" />
-    <TextBlock  Name ="vosem" Height="20" Background="Green" />
-    <TextBlock  Name ="devat" Height="20" Background="Blue" />
-    <TextBox Name="Chatt" Watermark="Напишите сообщение..." Height="50" />
-    <Button Name="Enter" Width="160" Foreground="White" Background="Green">Отправить сообщение</Button>
+    <TextBlock  Name ="one" Background="Gray" Height="20" />
+    <TextBlock  Name ="two" Height="20" />
+    <TextBlock  Name ="three" Background="Gray" Height="20" />
+    <TextBlock  Name ="four" Height="20" />
+    <TextBlock  Name ="five" Background="Gray" Height="20" />
+    <TextBlock  Name ="six" Height="20"  />
+    <TextBlock  Name ="seven" Height="20" Background="Gray" />
+    <TextBlock  Name ="vosem" Height="20"  />
+    <TextBlock  Name ="devat" Height="20" Background="Gray" />
+    <TextBox Name="Message" Watermark="Напишите сообщение..." Height="50" />
+    <Button Name="SendMessage" Width="160" Foreground="White" Background="Green">Отправить сообщение</Button>
+    <Button Name="Refresh" Width="160" Foreground="White" Background="Green">Обновить список сообщений</Button>
 	</StackPanel>
 </Window>
